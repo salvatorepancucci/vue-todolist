@@ -77,11 +77,10 @@ h1 {
 }
 
 .logo-img {
-    height: 24px; /* Altezza proporzionata al testo */
-    width: auto; /* Mantiene le proporzioni */
+    height: 24px; 
+    width: auto; 
 }
 
-/* Stile per v-cloak */
 [v-cloak] {
     display: none;
 }
