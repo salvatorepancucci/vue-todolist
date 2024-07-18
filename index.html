@@ -18,8 +18,7 @@
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center"
                     v-for="(todo, index) in todos" :key="index">
-                    <span class="d-flex align-items-center">
-                        {{ todo.text }}
+                    <span :class="{ 'text-decoration-line-through': todo.done, 'cursor-pointer': true }" @click="toggleDone(index)">{{ todo.text }}
                         <img v-if="todo.logo" :src="todo.logo" :alt="todo.text" class="ms-2 logo-img">
                     </span>
                     <div class="ms-auto d-flex align-items-center">
