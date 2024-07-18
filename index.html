@@ -15,7 +15,15 @@
     </header>
     <main>
         <div id="app" class="container mt-5">
-            
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center"
+                    v-for="(todo, index) in todos" :key="index">
+                    <span :class="{ 'text-decoration-line-through': todo.done }">{{ todo.text }}</span>
+                    <button class="btn btn-danger btn-sm" @click="removeTodo(index)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </li>
+            </ul>
             <div class="input-group mt-4">
                 
             </div>
