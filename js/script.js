@@ -3,15 +3,15 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // Array di to-do iniziali con 'done' impostato su false
+            // Array di to-do iniziali con 'done' impostato su false e aggiunta dei loghi
             todos: [
                 { text: 'Tim Berners Story', done: false },
-                { text: 'Le basi del front-end: HTML', done: false },
-                { text: 'Got some style? Cascading Style Sheets', done: false },
+                { text: 'Le basi del front-end: HTML', done: false, logo: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg' },
+                { text: 'Got some style? Cascading Style Sheets', done: false, logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg'},
                 { text: 'Selettori avanzati CSS: non per programmatori della domenica!', done: false },
-                { text: 'Bootstrap and the story of how my life was saved', done: false },
-                { text: 'Programmazione front-end: JavaScript (non) ti temo', done: false },
-                { text: 'Per fortuna che c\'è Vue.js', done: false }
+                { text: 'Bootstrap and the story of how my life was saved', done: false, logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg' },
+                { text: 'Programmazione front-end: JavaScript (non) ti temo', done: false, logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' },
+                { text: 'Per fortuna che c\'è Vue.js', done: false, logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg' }
             ],
             // Nuovo to-do da aggiungere
             newTodo: ''

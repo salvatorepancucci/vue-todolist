@@ -75,3 +75,8 @@ h1 {
     border-color: #c1e359;
     color: #001632;
 }
+
+.logo-img {
+    height: 24px; 
+    width: auto; 
+}
