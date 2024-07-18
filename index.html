@@ -19,6 +19,9 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center"
                     v-for="(todo, index) in todos" :key="index">
                     <span :class="{ 'text-decoration-line-through': todo.done }">{{ todo.text }}</span>
+                    <button class="btn btn-success btn-sm me-2" @click="markAsDone(index)">
+                        <i class="fas fa-check"></i>
+                    </button>
                     <button class="btn btn-danger btn-sm" @click="removeTodo(index)">
                         <i class="fas fa-times"></i>
                     </button>
@@ -26,11 +29,11 @@
             </ul>
             <div class="input-group mt-4">
                 <input type="text" class="form-control" v-model="newTodo" placeholder="Aggiungi una nuova attività">
-            <button class="btn btn-primary" @click="addTodo">Aggiungi</button>
+                <button class="btn btn-primary" @click="addTodo">Aggiungi</button>
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
