@@ -19,7 +19,7 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center"
                     v-for="(todo, index) in todos" :key="index">
                     <span :class="{ 'text-decoration-line-through': todo.done }">{{ todo.text }}</span>
-                    <button class="btn btn-success btn-sm me-2" @click="markAsDone(index)">
+                    <button class="btn btn-success btn-sm me-2 ms-auto" @click="markAsDone(index)">
                         <i class="fas fa-check"></i>
                     </button>
                     <button class="btn btn-danger btn-sm" @click="removeTodo(index)">
@@ -28,7 +28,7 @@
                 </li>
             </ul>
             <div class="input-group mt-4">
-                <input type="text" class="form-control" v-model="newTodo" placeholder="Aggiungi una nuova attività">
+                <input type="text" class="form-control" v-model="newTodo" placeholder="Prossimo argomento">
                 <button class="btn btn-primary" @click="addTodo">Aggiungi</button>
             </div>
         </div>

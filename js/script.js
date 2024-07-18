@@ -13,17 +13,23 @@ createApp({
                 { text: 'Programmazione front-end: JavaScript (non) ti temo', done: false },
                 { text: 'Per fortuna che c\'è Vue.js', done: false }
             ],
-            
+            // Nuovo to-do da aggiungere
+            newTodo: ''
         };
     },
     methods: {
         // Segna un to-do come completato
         markAsDone(index) {
             this.todos[index].done = true;
-        }
+        },
         // Rimuove un to-do dall'array
         removeTodo(index) {
             this.todos.splice(index, 1);
+        },
+        // Aggiunge un nuovo to-do all'array
+        addTodo() {
+            this.newTodo.trim() !== '' ? this.todos.push({ text: this.newTodo, done: false }) : null;
+            this.newTodo = '';
         },
     }
 }).mount('#app');
