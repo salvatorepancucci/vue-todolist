@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // Array di to-do iniziali con 'done' impostato su true
+            // Array di to-do iniziali con 'done' impostato su false
             todos: [
                 { text: 'Tim Berners Story', done: false },
                 { text: 'Le basi del front-end: HTML', done: false },
@@ -22,6 +22,12 @@ createApp({
         markAsDone(index) {
             this.todos[index].done = true;
         },
+        // Rimuove un to-do dall'array dopo conferma
+        confirmRemove(index) {
+            if (confirm('Sei sicuro? La cancellazione sarà irreversibile!')) {
+                this.removeTodo(index);
+            }
+        },
         // Rimuove un to-do dall'array
         removeTodo(index) {
             this.todos.splice(index, 1);
@@ -31,5 +37,9 @@ createApp({
             this.newTodo.trim() !== '' ? this.todos.push({ text: this.newTodo, done: false }) : null;
             this.newTodo = '';
         },
+        // Inverte il valore di 'done' di un to-do
+        toggleDone(index) {
+            this.todos[index].done = !this.todos[index].done;
+        }
     }
 }).mount('#app');

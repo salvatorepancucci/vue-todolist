@@ -18,11 +18,11 @@
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center"
                     v-for="(todo, index) in todos" :key="index">
-                    <span :class="{ 'text-decoration-line-through': todo.done }">{{ todo.text }}</span>
+                    <span :class="{ 'text-decoration-line-through': todo.done, 'cursor-pointer': true }" @click="toggleDone(index)">{{ todo.text }}</span>
                     <button class="btn btn-success btn-sm me-2 ms-auto" @click="markAsDone(index)">
                         <i class="fas fa-check"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm" @click="removeTodo(index)">
+                    <button class="btn btn-danger btn-sm" @click="confirmRemove(index)">
                         <i class="fas fa-times"></i>
                     </button>
                 </li>
