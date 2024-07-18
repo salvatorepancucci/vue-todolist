@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // Array dei to-do iniziali
+            // Array di to-do iniziali con 'done' impostato su true
             todos: [
                 { text: 'Tim Berners Story', done: false },
                 { text: 'Le basi del front-end: HTML', done: false },
@@ -13,9 +13,17 @@ createApp({
                 { text: 'Programmazione front-end: JavaScript (non) ti temo', done: false },
                 { text: 'Per fortuna che c\'è Vue.js', done: false }
             ],
-        }
-    }
+            
+        };
+    },
     methods: {
-
+        // Segna un to-do come completato
+        markAsDone(index) {
+            this.todos[index].done = true;
+        }
+        // Rimuove un to-do dall'array
+        removeTodo(index) {
+            this.todos.splice(index, 1);
+        },
     }
-}).mount('#app')
+}).mount('#app');
